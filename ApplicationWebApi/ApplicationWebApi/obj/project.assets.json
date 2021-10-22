@@ -9626,11 +9626,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marko\\source\\repos\\ApplicationWebApi\\ApplicationWebApi\\ApplicationWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\marko\\source\\repos\\ApplicationWebApi\\ApplicationWebApi\\ApplicationWebApi\\ApplicationWebApi.csproj",
       "projectName": "ApplicationWebApi",
-      "projectPath": "C:\\Users\\marko\\source\\repos\\ApplicationWebApi\\ApplicationWebApi\\ApplicationWebApi.csproj",
+      "projectPath": "C:\\Users\\marko\\source\\repos\\ApplicationWebApi\\ApplicationWebApi\\ApplicationWebApi\\ApplicationWebApi.csproj",
       "packagesPath": "C:\\Users\\marko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marko\\source\\repos\\ApplicationWebApi\\ApplicationWebApi\\obj\\",
+      "outputPath": "C:\\Users\\marko\\source\\repos\\ApplicationWebApi\\ApplicationWebApi\\ApplicationWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marko\\AppData\\Roaming\\NuGet\\NuGet.Config",

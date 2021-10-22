@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z1ahqfboCNUkFvZ34kK88fUsFgn0luwX1bKdbzpQQRs91vz1LWPz3PTJn2k0p5Dm++62K5uN13rL0rXfrzOPIQ==",
+  "dgSpecHash": "up8y8unPdzRoXQd2dev9O9a9hssqAcp9/F/QqVCvdwENpYR7jx4VjL7gKScrWLjgCtbSn/mB9gRct2REYSD2Jg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marko\\source\\repos\\ApplicationWebApi\\ApplicationWebApi\\ApplicationWebApi.csproj",
+  "projectFilePath": "C:\\Users\\marko\\source\\repos\\ApplicationWebApi\\ApplicationWebApi\\ApplicationWebApi\\ApplicationWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marko\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\marko\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
