@@ -11,7 +11,7 @@ let url = "https://localhost:44300/api/Persons";
 function renderPost(person) {
     person.data.forEach(element => {
         output += `
-        <div >
+        <div class="main">
             <tr id=${element.id}>
             <td class="person-name">${element.name}</td>
             <td class="person-lastName">${element.lastName}</td>
@@ -39,11 +39,20 @@ list.addEventListener('click', (e) => {
 
     // delete 
     if (deleteButton) {
-        fetch(`${url}/${id}`, {
+
+        let result = confirm("Want to delete?");
+        if (result) {
+            //Logic to delete the item
+            fetch(`${url}/${id}`, {
                 method: "DELETE",
             })
-            .then(res => res.json())
-            .then(() => location.reload())
+            showAlert('Person delete success', 'success');
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        }
+
+
     }
     // edit
     if (editButton) {
@@ -60,18 +69,22 @@ list.addEventListener('click', (e) => {
     btnSubmit.addEventListener('click', (e) => {
         e.preventDefault();
         fetch(`${url}/${id}`, {
-                method: "PUT",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: titleValue.value,
-                    lastName: lastNameValue.value,
-                    jmbg: jmbgValue.value
-                })
-
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: titleValue.value,
+                lastName: lastNameValue.value,
+                jmbg: jmbgValue.value
             })
-            .then(() => location.reload())
+
+        })
+        showAlert('Person Edit', 'success');
+        setTimeout(() => {
+
+            window.location.reload();
+        }, 1000);
     })
 
 })
@@ -80,18 +93,51 @@ list.addEventListener('click', (e) => {
 addPersonForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    let _data = {
-        name: titleValue.value,
-        lastName: lastNameValue.value,
-        jmbg: jmbgValue.value
-    }
 
-    fetch(`${url}`, {
-        method: 'POST',
-        body: JSON.stringify(_data),
-        headers: new Headers({
-            'Content-Type': 'application/json'
+    if (titleValue.value === '' || lastNameValue.value === '' || jmbgValue.value === '') {
+        showAlert('Please fill in all fields', 'danger');
+    } else {
+        let _data = {
+            name: titleValue.value,
+            lastName: lastNameValue.value,
+            jmbg: jmbgValue.value
+        }
+
+        fetch(`${url}`, {
+            method: 'POST',
+            body: JSON.stringify(_data),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+
         })
 
-    }).then(() => location.reload())
+
+
+
+        // .then(() => location.reload())
+        showAlert('Person Added', 'success');
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
+
+    }
+
 })
+
+function showAlert(message, className) {
+    const div = document.createElement('div');
+    div.className = `alert alert-${className}`;
+    div.appendChild(document.createTextNode(message));
+    const container = document.querySelector('.row');
+    const form = document.querySelector('#firstCh');
+    container.insertBefore(div, form);
+
+    // Vanish in 3 seconds
+    setTimeout(() => document.querySelector('.alert').remove(), 1700);
+}
+
+
+function clearFields() {
+    output = '';
+}
