@@ -41,8 +41,8 @@ list.addEventListener('click', (e) => {
     if (deleteButton) {
 
         let result = confirm("Want to delete?");
+
         if (result) {
-            //Logic to delete the item
             fetch(`${url}/${id}`, {
                 method: "DELETE",
             })
@@ -82,7 +82,6 @@ list.addEventListener('click', (e) => {
         })
         showAlert('Person Edit', 'success');
         setTimeout(() => {
-
             window.location.reload();
         }, 1000);
     })
@@ -92,7 +91,6 @@ list.addEventListener('click', (e) => {
 // Create Person
 addPersonForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
 
     if (titleValue.value === '' || lastNameValue.value === '' || jmbgValue.value === '') {
         showAlert('Please fill in all fields', 'danger');
@@ -112,10 +110,6 @@ addPersonForm.addEventListener('submit', (e) => {
 
         })
 
-
-
-
-        // .then(() => location.reload())
         showAlert('Person Added', 'success');
         setTimeout(() => {
             window.location.reload();
@@ -129,15 +123,9 @@ function showAlert(message, className) {
     const div = document.createElement('div');
     div.className = `alert alert-${className}`;
     div.appendChild(document.createTextNode(message));
-    const container = document.querySelector('.row');
+    const container = document.querySelector('.validation');
     const form = document.querySelector('#firstCh');
     container.insertBefore(div, form);
 
-    // Vanish in 3 seconds
     setTimeout(() => document.querySelector('.alert').remove(), 1700);
-}
-
-
-function clearFields() {
-    output = '';
 }
